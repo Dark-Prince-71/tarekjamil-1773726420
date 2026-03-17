@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>তারেক জামিল | পরিচিতি</title>
+    <!-- ফন্ট ও সিএসএস রিসেট -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: linear-gradient(145deg, #0b0f1c 0%, #1a1f33 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            position: relative;
+            /* লাইফ ইফেক্ট: শ্বাস প্রশ্বাসের মত ব্যাকগ্রাউন্ড মুভমেন্ট */
+            animation: breath 8s ease-in-out infinite;
+        }
+
+        @keyframes breath {
+            0% { background: linear-gradient(145deg, #0b0f1c 0%, #1a1f33 100%); }
+            50% { background: linear-gradient(145deg, #131a2b 0%, #222842 100%); }
+            100% { background: linear-gradient(145deg, #0b0f1c 0%, #1a1f33 100%); }
+        }
+
+        /* কার্ডের মূল কাঠামো */
+        .card {
+            max-width: 420px;
+            width: 100%;
+            background: rgba(20, 25, 45, 0.65);
+            backdrop-filter: blur(14px) saturate(180%);
+            -webkit-backdrop-filter: blur(14px) saturate(180%);
+            border-radius: 48px 48px 48px 48px;
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 215, 0, 0.15) inset, 0 0 30px rgba(100, 150, 255, 0.3);
+            padding: 28px 24px 36px 24px;
+            border: 1px solid rgba(255, 210, 100, 0.3);
+            transition: all 0.3s ease;
+            /* লাইফ ইফেক্ট: হোভার গ্রো এবং গ্লো */
+            transition: transform 0.25s ease, box-shadow 0.4s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02) translateY(-6px);
+            box-shadow: 0 50px 90px rgba(0, 30, 80, 0.9), 0 0 0 3px rgba(255, 220, 120, 0.5) inset, 0 0 60px #3e6aff;
+        }
+
+        /* ইমেজ সেকশন - লাইভ কালার গ্রেডিং ও ইফেক্ট */
+        .image-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            overflow: visible;
+            filter: drop-shadow(0 10px 18px #00000070);
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            border: 4px solid rgba(255, 215, 0, 0.7);
+            box-shadow: 0 0 30px #f0b3ff, 0 0 0 2px #c0a0ff inset;
+            /* লাইভ কালার গ্রেডিং — ফিল্টার পরিবর্তনশীল */
+            filter: contrast(1.1) brightness(1.1) saturate(1.3) hue-rotate(2deg);
+            transition: filter 0.4s ease, transform 0.3s ease, border-color 0.3s;
+            animation: softGlow 4s infinite alternate;
+        }
+
+        @keyframes softGlow {
+            0% { filter: contrast(1.1) brightness(1.1) saturate(1.2) hue-rotate(0deg); box-shadow: 0 0 20px #ffb3c6; border-color: #ffd966; }
+            50% { filter: contrast(1.2) brightness(1.2) saturate(1.6) hue-rotate(8deg); box-shadow: 0 0 40px #b3d0ff; border-color: #a6c1ff; }
+            100% { filter: contrast(1.0) brightness(1.15) saturate(1.4) hue-rotate(3deg); box-shadow: 0 0 30px #ffb3f0; border-color: #fada9f; }
+        }
+
+        /* হোভারে ইমেজের কালার গ্রেডিং আরও প্রাণবন্ত */
+        .image-wrapper:hover .profile-pic {
+            filter: contrast(1.3) brightness(1.25) saturate(1.8) hue-rotate(12deg);
+            transform: scale(1.05);
+            border-color: #ffe484;
+        }
+
+        /* নাম ও বয়স */
+        .name {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #fff7e6;
+            text-align: center;
+            line-height: 1.2;
+            text-shadow: 0 4px 12px #4a2b9f, 2px 2px 0px #001524;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            word-break: break-word;
+            animation: slideIn 0.6s ease;
+        }
+
+        .age-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffa559, #ff6f61);
+            color: #1a0025;
+            font-weight: 600;
+            font-size: 1.3rem;
+            padding: 6px 20px;
+            border-radius: 60px;
+            margin: 6px auto 14px;
+            box-shadow: 0 6px 0 #731b3a, 0 12px 25px #d6006e80;
+            text-align: center;
+            width: fit-content;
+            border: 1px solid #ffdb9d;
+            backdrop-filter: blur(4px);
+        }
+
+        /* স্বপ্নের অংশ - ডাক্তার + ইঞ্জিনিয়ার */
+        .dream {
+            background: rgba(0, 8, 27, 0.6);
+            border-left: 6px solid #ffc107;
+            border-right: 6px solid #17a2b8;
+            border-radius: 60px 60px 30px 30px;
+            padding: 18px 14px;
+            margin: 24px 0 28px 0;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #f8f0e0;
+            box-shadow: 0 0 35px #3d5a80, 0 0 10px #64b5f6 inset;
+            backdrop-filter: blur(8px);
+            transition: all 0.2s;
+            /* ছোট life effect: টেক্সটের রঙ পরিবর্তন */
+            animation: dreamShift 5s infinite;
+        }
+
+        @keyframes dreamShift {
+            0% { border-left-color: #ffc107; border-right-color: #17a2b8; color: #ffe6b3; text-shadow: 0 0 5px cyan; }
+            50% { border-left-color: #ff6b9d; border-right-color: #3fffaf; color: #ffffff; text-shadow: 0 0 12px #f0f; }
+            100% { border-left-color: #ffc107; border-right-color: #17a2b8; color: #ffe6b3; text-shadow: 0 0 5px gold; }
+        }
+
+        .dream span {
+            font-size: 1.7rem;
+            display: inline-block;
+            margin: 0 4px;
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+
+        /* কন্ট্যাক্ট ইনফো কার্ড */
+        .contact-info {
+            background: rgba(10, 15, 30, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 38px;
+            padding: 22px 20px;
+            border: 1px solid rgba(255, 255, 180, 0.4);
+            box-shadow: 0 20px 30px -10px black, 0 0 0 2px #fcee9f inset;
+            margin: 18px 0 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            background: rgba(255,255,240,0.02);
+            padding: 8px 18px;
+            border-radius: 60px;
+            transition: 0.25s;
+            border: 1px solid transparent;
+        }
+
+        /* লাইফ ইফেক্ট: আইটেমের ওপর হোভার কালার গ্রেড */
+        .contact-item:hover {
+            border-color: #ffd966;
+            background: rgba(80, 100, 200, 0.2);
+            transform: translateX(10px) scale(1.02);
+            box-shadow: 0 0 25px #7a4dff;
+        }
+
+        .contact-icon {
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, gold, #ffb347, #ff7e5f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            width: 40px;
+            text-align: center;
+            filter: drop-shadow(0 0 8px orange);
+        }
+
+        .contact-detail {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #f5efdb;
+            word-break: break-word;
+        }
+
+        .contact-detail small {
+            font-size: 1rem;
+            color: #bfd7ff;
+            display: block;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        /* হাইলাইট ইমোজি */
+        .live-badge {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin: 15px 0 10px;
+            font-size: 1.8rem;
+            filter: drop-shadow(0 0 12px #ffd966);
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0); }
+        }
+
+        .live-badge span {
+            background: #00000040;
+            padding: 8px 18px;
+            border-radius: 100px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 220, 100, 0.7);
+            font-weight: 600;
+        }
+
+        /* ফুটার / ছোট নোট */
+        .footer-note {
+            text-align: center;
+            color: #ccd8ff;
+            font-size: 1rem;
+            margin-top: 24px;
+            border-top: 1px dashed #feb2b2;
+            padding-top: 16px;
+            font-weight: 400;
+        }
+
+        /* রেস্পন্সিভ টুইক */
+        @media (max-width: 450px) {
+            .card { padding: 18px 16px; }
+            .name { font-size: 1.9rem; }
+            .contact-detail { font-size: 1.1rem; }
+            .image-wrapper { width: 140px; height: 140px; }
+        }
+
+        /* অ্যানিমেশন এন্ট্রি */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- ছবি যেটা আপনি দিচ্ছেন (data: base64 placeholder - প্রতিস্থাপন করে দিলাম) 
+             নিচের src অংশটুকু আপনার দেওয়া ছবি দিয়ে প্রতিস্থাপন করুন। আমি একটি উদাহরণ SVG বসালাম যা সহজেই ব্রাউজারে দেখাবে। -->
+        <div class="image-wrapper">
+            <img 
+                class="profile-pic" 
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23342b5e' stroke='%23ffbf00' stroke-width='3' /%3E%3Ccircle cx='50' cy='40' r='12' fill='%23f9e0a0' /%3E%3Ccircle cx='35' cy='35' r='3' fill='black' /%3E%3Ccircle cx='65' cy='35' r='3' fill='black' /%3E%3Cpath d='M35 55 Q50 70, 65 55' stroke='%23cc6600' stroke-width='4' fill='none' stroke-linecap='round' /%3E%3Ctext x='28' y='86' font-size='12' fill='white' font-family='monospace'%3E📸%3C/text%3E%3C/svg%3E"
+                alt="তারেক জামিলের ছবি"
+                title="তারেক জামিল"
+            >
+        </div>
+        <!-- উপরের src এ data:image/svg দিয়ে একটি উদাহরণ ছবি দিলাম, এটি আপনার দেওয়া আসল ছবির URL/Link দিয়ে বদলে দিন  -->
+
+        <!-- নাম ও লাইভ কালার গ্রেডিং -->
+        <h1 class="name">মোঃ তারেক জামিল</h1>
+        <div class="age-badge">
+            ✦ বয়স ১৪+ ✦
+        </div>
+
+        <!-- ডাক্তার + ইঞ্জিনিয়ার স্বপ্ন (লাইফ ইফেক্ট) -->
+        <div class="dream">
+            <span>🩺</span> ডাক্তার <span>⚡</span> + <span>🛠️</span> ইঞ্জিনিয়ার <span>💡</span><br>
+            <span style="font-size: 1rem; opacity: 0.9;">(ভবিষ্যতে আমি ডাক্তার ও ইঞ্জিনিয়ার)</span>
+        </div>
+
+        <!-- L I V E  ব্যাজ + কালার গ্রেডিং ইঙ্গিত -->
+        <div class="live-badge">
+            <span>🔴 LIVE</span>
+            <span>🌈 কালার গ্রেড</span>
+        </div>
+
+        <!-- যোগাযোগের মাধ্যম (মোবাইল ও ইমেইল) life effect সহ -->
+        <div class="contact-info">
+            <!-- মোবাইল নাম্বার -->
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <div class="contact-detail">
+                    01308840978 <small>মোবাইল / হোয়াটসঅ্যাপ</small>
+                </div>
+            </div>
+            <!-- ইমেইল -->
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-detail">
+                    tarekjamilm66@gmail.com <small>ইমেইল (প্রাথমিক)</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- আরও লাইফ ইফেক্ট: টেক্সট ও গ্রেডিয়েন্ট বার -->
+        <div style="display: flex; gap: 8px; justify-content: center; margin: 10px 0 0px;">
+            <span style="width: 20px; height: 20px; border-radius: 8px; background: linear-gradient(45deg, red, blue); animation: rotateGlow 2s infinite;"></span>
+            <span style="width: 20px; height: 20px; border-radius: 8px; background: linear-gradient(45deg, cyan, magenta); animation: rotateGlow 2.4s infinite reverse;"></span>
+            <span style="width: 20px; height: 20px; border-radius: 8px; background: linear-gradient(45deg, yellow, green); animation: rotateGlow 2.8s infinite;"></span>
+        </div>
+        <style>
+            @keyframes rotateGlow {
+                0% { filter: hue-rotate(0deg) brightness(1); }
+                100% { filter: hue-rotate(360deg) brightness(1.3); }
+            }
+        </style>
+
+        <!-- ফুটার লাইভ ইফেক্ট -->
+        <div class="footer-note">
+            ⚡ লাইফ ইফেক্ট + লাইভ কালার গ্রেডিং ⚡<br>
+            <span style="color: #ffd966;">✻ সবসময় প্রাণবন্ত ✻</span>
+        </div>
+    </div>
+
+    <!-- নিচে কিছু inline স্বচ্ছতা ও নিশ্চিতকরণ: ছবি প্রতিস্থাপন নির্দেশনা (শুধু ডেভেলপার নোট) -->
+    <!-- 
+        ★★ আপনার দেওয়া ছবি এড করা:
+        উপরের .profile-pic এর src attribute-এ আপনার ইমেজের লিংক দিন। 
+        যেমন: src="https://i.ibb.co.com/your-image.jpg" অথবা ফাইল লোকাল সার্ভার থেকে।
+        বর্তমানে একটি SVG ইমেজ দেয়া আছে যা দেখতে ফেসের মত। আপনি সেটা প্রতিস্থাপন করবেন। 
+    -->
+</body>
+</html>
